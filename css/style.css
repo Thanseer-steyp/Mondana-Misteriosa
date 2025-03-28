@@ -24,17 +24,16 @@ ul,ol,li,a {
     text-decoration: none;
 }
 section#home { 
-    /* background-image: url(../assets/Untitled\ design\ \(1\).png); */
     background-color: #fff;
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 100vh;
-    padding-top: 20px;
+    padding: 20px 0;
+}
+.wrapper {
+    width: 96%;
+    margin: 0 auto;
+    max-width: 1200px;
 }
 
 section#home header { 
-    width: 60%;
-    margin: 0 auto;
     background: rgba(0, 0, 0, 0.1);
     border-bottom: 1px solid white;
 }
@@ -43,22 +42,23 @@ section#home header div.topSection {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px;
+    padding: 10px 20px;
 }
 
 section#home header div.topSection h1 { 
-    width: 10%;
-    height: 60px;
+    width: 70px;
+    height: 70px;
     transition: transform .2s ease;
 }
-section#home header div.topSection h1:hover {
+/* section#home header div.topSection h1:hover {
     transform: scale(1.05);
-}
+} */
 
 section#home header div.topSection h1 a { 
     width: 100%;
     display: block;
     height: 100%;
+    overflow: hidden;
 }
 
 section#home header div.topSection h1 a img { 
@@ -68,8 +68,8 @@ section#home header div.topSection h1 a img {
 
 section#home header div.topSection h2.title {
     font-family: MoglanDemo;
-    font-size: 4.5rem;
-    letter-spacing: 0.10cm;
+    font-size: 70px;
+    letter-spacing: 0.20cm;
     opacity: .9;
 }
 
@@ -89,6 +89,10 @@ section#home header div.topSection div.right div.contact ul {
     width: 60%;
     align-items: center;
     justify-content: space-between;
+    flex-shrink: 0;
+}
+.bookdetails2 {
+    display: none;
 }
 
 section#home header div.topSection div.right div.contact ul li { 
@@ -192,9 +196,7 @@ section#home header div.bottomSection ul li a {
 }
 
 section#home section.bookDetails { 
-    width: 60%;
-    margin: 0 auto;
-    padding: 20px;
+    padding: 10px;
     background: rgba(0, 0, 0, 0.1);
     border-bottom: 1px solid white;
 }
@@ -224,13 +226,14 @@ section#home section.bookDetails h3 {
 
 section#home section.bookDetails div.bottom {
     display: flex;
-    margin-top: 45px;
+    margin-top: 30px;
     justify-content: space-between;
 }
 
 section#home section.bookDetails div.bottom ul.bookdetails {
     flex: 1;
     font-family: sans-serif;
+    padding: 6px 0;
 }
 section#home section.bookDetails div.bottom ul.bookdetails div.purchase {
     display: flex;
@@ -257,6 +260,10 @@ section#home section.bookDetails div.bottom ul.bookdetails div.purchase a.buy {
 }
 section#home section.bookDetails div.bottom ul.bookdetails li {
     margin-bottom: 8px;
+    letter-spacing: 0.065rem;
+}
+section#home section.bookDetails div.bottom ul.bookdetails li b {
+    letter-spacing: 0.05rem;
 }
 section#home section.bookDetails div.left { 
     width: 22%;
@@ -302,8 +309,6 @@ section#home section.bookDetails div.right div.bookImage img {
     
 }
 section#home section.bookSummary {
-    width: 60%;
-    margin: 0 auto;
     background: rgba(0, 0, 0, 0.1);
     padding: 20px;
 }
@@ -313,5 +318,71 @@ section#home section.bookSummary h3 {
     margin-bottom: 8px;
 }
 section#home section.bookSummary p {
-    font-size: 18px;
+    font-size: 14px;
+    line-height: 170%;
+    letter-spacing: 0.08rem;
 }
+
+
+.flip-card {
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  }
+  
+  /* This container is needed to position the front and back side */
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+  
+  /* Do an horizontal flip when you move the mouse over the flip box container */
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  /* Position the front and back side */
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+  }
+
+  .flip-card-back {
+    transform: rotateY(180deg);
+  }
+
+
+
+
+  @media all and (max-width:1080px) {
+    section#home header div.topSection h2.title {
+        font-size: 64px;
+    }
+    section#home section.bookDetails div.left {
+        width: 24%;
+    }
+    section#home section.bookDetails div.right {
+        width: 24%;
+    }
+  }
+  @media all and (max-width:980px) {
+    section#home header div.topSection div.right div.contact ul {
+        width: 70%;
+    }
+    section#home header div.topSection h2.title {
+        font-size: 60px;
+    }
+    section#home section.bookSummary p {
+        font-size: 13px;
+    }
+  }
+
+
